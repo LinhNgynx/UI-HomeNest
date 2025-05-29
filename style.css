@@ -1,0 +1,517 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sora", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: fixed;
+  z-index: 1000;
+  top: 200px;
+  align-self: flex-start;
+  background: white; /* optional: to show the border radius clearly */
+  padding: 20px; /* optional: spacing inside */
+  border-radius: 50px; /* ✅ makes corners rounded */
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px;
+}
+
+.contact-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(232, 220, 220);
+  text-decoration: none;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-text {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 5px;
+  color: #6b7280;
+}
+
+/* Main Content */
+.main-content {
+  width: 100%;
+  display: flex;
+  padding-top: 30px; /* instead of margin */
+  padding-left: 150px; /* instead of margin */
+  padding-right: 150px;
+  gap: 30px;
+  align-items: flex-start;
+  background-color: var(--bs-body-bg);
+}
+
+/* Video Section */
+.video-section {
+  flex: 0 0 60%;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Section Container */
+.right-section {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 500px;
+}
+
+.video-background {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.services-label {
+  color: #64748b;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.company-name {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.video-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.elementor-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Services Section */
+.services-section {
+  flex: 0 0 65%;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.services-title {
+  color: #3b82f6;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.services-subtitle {
+  color: #1f2937;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 5px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  background: #f8fafc;
+  transform: translateX(5px);
+}
+
+.service-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-text {
+  color: #374151;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background: linear-gradient(
+    92.16deg,
+    #2f3fcf 0%,
+    #1a85f8 56.7%,
+    #66e5fb 100%
+  );
+  color: white;
+  border: 1px solid #fff;
+  padding: 12px 25px;
+  border-radius: 20px 20px 20px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 50%;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Bottom Section */
+.bottom-section {
+  flex: 1;
+  background-color: #1f1f1f;
+  background-image: url(https://homenest.com.vn/wp-content/uploads/2024/12/homenest-com-vn-483.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Overlay for darkening the background image */
+.bottom-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.5); /* adjust darkness here */
+  border-radius: 20px;
+  z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+.bottom-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.consultation-text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.social-icons svg {
+  width: 30px; /* smaller size */
+  height: 30px;
+  fill: #ffffff;
+  transition: fill 0.3s;
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 10%;
+  box-sizing: content-box;
+}
+
+.social-icons svg:hover {
+  fill: #1da1f2; /* example: blue on hover */
+}
+
+.more-content {
+  width: 100%;
+  display: flex;
+  padding-left: 150px; /* instead of margin */
+  padding-right: 150px;
+  gap: 30px;
+  background-color: var(--bs-body-bg);
+}
+.section-wrapper {
+  background-image: url(https://homenest.com.vn/wp-content/uploads/elementor/css/post-22245.css?ver=1747113405);
+  padding: 40px 0 0 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.header h2 {
+  background: linear-gradient(90.27deg, #2f3fcf 0%, #1a85f8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 46px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.header h3 {
+  font-size: 46px;
+  font-weight: 600;
+  color: #222;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.image-side {
+  flex: 0 0 35%;
+}
+
+.image-side img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.card-side {
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+.icon img {
+  max-width: 70px; /* Set your desired limit */
+  max-height: 70px;
+  width: auto;
+  height: auto;
+}
+
+.card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+.below-container {
+  padding-top: 30px; /* instead of margin */
+  padding-left: 150px; /* instead of margin */
+  padding-right: 150px;
+  width: 100%;
+  margin: auto;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  background: linear-gradient(92.16deg, #2F3FCF 0%, #1A85F8 56.7%, #66E5FB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.why-wordpress-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.content-left,
+.content-right {
+  flex: 1;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.feature-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover img {
+  transform: scale(1.05);
+}
+
+.feature-text {
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: #666;
+}
+.website-benefits {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #f7fcff, #e3f2ff);
+  gap: 40px;
+}
+
+.benefits-text {
+  flex: 1;
+  max-width: 55%;
+}
+
+.benefits-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.benefits-image img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.benefits-heading {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 32px;
+  color: #111;
+}
+
+.heading-highlight {
+  background: linear-gradient(92.16deg, #2F3FCF 0%, #1A85F8 56.7%, #66E5FB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.benefit-item {
+  margin-bottom: 24px;
+}
+
+.benefit-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.benefit-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
