@@ -809,8 +809,8 @@ body {
 
 .hn-card__features li {
   position: relative;
-  padding-left: 50px;
-  margin-bottom: 5px;
+  padding-left: 30px;
+  margin: 10px;
    font-size: 17px; 
 }
 
