@@ -1168,15 +1168,15 @@ body {
 }
 .website-label {
   position: absolute;
-  top: 30%;           /* align to top of the container */
-  left: 90%;        /* center horizontally */
+  top: 30%; /* align to top of the container */
+  left: 90%; /* center horizontally */
   transform: translate(-50%, -50%); /* center horizontally and move upward */
-  font-size: 20px;  /* smaller size */
+  font-size: 20px; /* smaller size */
   font-weight: 900;
   margin: 0;
-  color: #000;      /* change color as needed */
+  color: #000; /* change color as needed */
   background: transparent;
-  padding: 0 5px;   /* optional padding around text */
+  padding: 0 5px; /* optional padding around text */
   pointer-events: none; /* so it doesn't interfere with clicking */
 }
 .homenest__brand-accent {
@@ -1267,13 +1267,10 @@ body {
   max-width: 700px;
 }
 
-
 @media (max-width: 1024px) {
   .homenest__container-grid {
     gap: 60px;
   }
-
- 
 }
 
 @media (max-width: 768px) {
@@ -1340,4 +1337,251 @@ body {
   height: 1.125rem;
   border-bottom-right-radius: 0.8rem;
   box-shadow: 0.375rem 0.375rem white;
+}
+
+.homenest-content-container {
+  background: #F0F2F4;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding-top: 30px;
+  /* instead of margin */
+  padding-left: 150px;
+  /* instead of margin */
+  padding-right: 150px;
+}
+
+.homenest-header-section {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.homenest-main-title {
+  font-family: "Homenest", sans-serif;
+  font-size: 44px;
+  font-weight: 700; /* Bold weight for strong text appearance */
+  line-height: 1.5em;
+}
+
+.homenest-sub-title {
+  font-family: "Homenest", sans-serif;
+  font-size: 44px;
+  font-weight: 700; /* Bold weight for strong text appearance */
+  line-height: 1.5em;
+  background: linear-gradient(
+    92.16deg,
+    #2f3fcf 0%,
+    #1a85f8 56.7%,
+    #66e5fb 100% 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.homenest-main-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.homenest-illustration-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+@keyframes homenest-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.homenest-features-section {
+  position: relative;
+}
+
+.homenest-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  min-height: 480px;
+}
+
+.homenest-feature-card {
+  background: transparent;
+  padding: 35px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.homenest-feature-card.homenest-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.homenest-feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+
+.homenest-feature-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.homenest-feature-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.homenest-feature-description strong {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.homenest-navigation-controls {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.homenest-nav-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #3498db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.homenest-nav-button:hover {
+  background: #3498db;
+  color: white;
+  transform: scale(1.1);
+}
+
+.homenest-nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.homenest-nav-button:disabled:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #3498db;
+}
+
+.homenest-pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.homenest-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(52, 152, 219, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.homenest-dot.homenest-active-dot {
+  background: #3498db;
+  transform: scale(1.2);
+}
+
+.homenest-page-counter {
+  text-align: center;
+  margin-top: 20px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .homenest-main-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .homenest-visual-container {
+    width: 400px;
+    height: 320px;
+  }
+
+  .homenest-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .homenest-navigation-controls {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .homenest-reasons-wrapper {
+    padding: 20px;
+  }
+
+  .homenest-content-container {
+    padding: 40px 20px;
+  }
+
+  .homenest-main-title {
+    font-size: 2rem;
+  }
+
+  .homenest-sub-title {
+    font-size: 2.2rem;
+  }
+
+  .homenest-visual-container {
+    width: 300px;
+    height: 240px;
+  }
+
+  .homenest-navigation-controls {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
