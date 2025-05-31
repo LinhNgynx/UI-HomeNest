@@ -109,10 +109,14 @@ function homenestPrevPage() {
 // Initialize the component
 homenestRenderFeatures();
 function scrollCards(direction) {
-  const container = document.querySelector(".hn-pricing-cards-wrapper");
-  const scrollAmount = 380; // adjust based on card width
+  const card = document.querySelector(".hn-card");
+
+  if (!card) return;
+
+  const cardWidth = card.offsetWidth + 24;// adjust based on card width
+  console.log(cardWidth);
   container.scrollBy({
-    left: direction * scrollAmount,
+    left: direction * cardWidth,
     behavior: "smooth",
   });
 }
@@ -339,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  const svgPlaceholder = `<svg xmlns="http://www.w3.org/2000/svg" width="81" height="65" viewBox="0 0 81 65" fill="none">
+  const svgPlaceholder = `<svg xmlns="http://www.w3.org/2000/svg" width="81" height="65" class="cubic-icon" viewBox="0 0 81 65" fill="none">
                         <g clip-path="url(#clip0_6376_31314)">
                             <path d="M51.124 19.6815L40.5458 33.6948L23.2778 30.5187L33.856 16.5054L51.124 19.6815Z"
                                 fill="url(#paint0_linear_6376_31314)"></path>

@@ -668,6 +668,9 @@ body {
   color: #555;
 }
 @media (max-width: 1224px) {
+  .more-content {
+    padding: 20px;
+  }
   .section-wrapper .content {
     flex-direction: column;
     align-items: center;
@@ -703,13 +706,14 @@ body {
     height: 80px;
   }
 
-  .header h2, .header h3 {
+  .header h2,
+  .header h3 {
     text-align: center;
   }
 }
 
 /* Mobile screens (up to 600px) */
-@media (max-width: 600px) {
+@media (max-width: 580px) {
   .image-side {
     width: 100%;
     margin-bottom: 20px;
@@ -754,11 +758,6 @@ body {
     width: 100%;
   }
 
-  .card-side .grid {
-    grid-template-columns: 1fr; /* Stack cards in 1 column */
-    gap: 20px;
-  }
-
   .card {
     padding: 10px;
     text-align: center;
@@ -769,7 +768,8 @@ body {
     height: 60px;
   }
 
-  .header h2, .header h3 {
+  .header h2,
+  .header h3 {
     text-align: center;
   }
 }
@@ -853,7 +853,10 @@ body {
   font-weight: 700;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
-@media (max-width: 1024px) {
+@media (max-width: 1224px) {
+  .below-container {
+    padding: 20px;
+  }
   .why-wordpress-section {
     flex-direction: column;
   }
@@ -868,43 +871,13 @@ body {
     font-size: 28px;
   }
 
-  .features {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
 
   .feature-box {
-    flex: 0 0 48%;
+    flex: 0 0 50%;
     margin-bottom: 20px;
   }
 }
 
-/* Mobile screens (up to 600px) */
-@media (max-width: 600px) {
-  .title {
-    font-size: 24px;
-  }
-
-  .subtitle,
-  .description,
-  .feature-text {
-    font-size: 14px;
-  }
-
-  .features {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .feature-box {
-    flex: 1 0 100%;
-  }
-
-  .feature-box img {
-    max-width: 80%;
-    margin: 0 auto 10px;
-  }
-}
 .subtitle {
   font-size: 16px;
   font-weight: 400;
@@ -971,12 +944,6 @@ body {
   margin-bottom: 40px;
 }
 
-.benefit-icon {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
 
 .benefit-text {
   max-width: 600px;
@@ -993,7 +960,12 @@ body {
   color: #555;
   line-height: 1.6;
 }
-
+.cubic-icon{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 .image-below-benefit-content {
   background-image: url("https://homenest.com.vn/wp-content/uploads/2025/01/h2-homenest-edu-vn-1.webp");
   background-size: cover;
@@ -1268,7 +1240,6 @@ body {
 }
 
 .homenest__container-grid {
-  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -1372,6 +1343,7 @@ body {
 
 .homenest__right-section {
   padding-left: 40px;
+  box-sizing: border-box;
 }
 
 .homenest__header-area {
@@ -1509,29 +1481,25 @@ body {
   line-height: 1.7;
   max-width: 700px;
 }
-
-@media (max-width: 1024px) {
-  .homenest__container-grid {
-    gap: 60px;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .homenest__container-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
-
-  .homenest__brand-title {
-    font-size: 42px;
+  .homenest__main-wrapper {
+    width: 100%;
+    display: flex;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-
-  .homenest__sub-heading {
-    font-size: 28px;
-  }
-
-  .homenest__right-section {
-    padding-left: 0;
+  .homenest__image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    display: block;
   }
 }
 
@@ -1784,5 +1752,84 @@ body {
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
+  }
+}
+@media (max-width: 1028px) {
+  .website-benefits {
+    flex-direction: column;
+    padding: 40px 16px;
+  }
+
+  .benefits-text {
+    text-align: left;
+    max-width: 100%;
+    
+  }
+
+  .benefit-item {
+    flex-direction: row;
+    align-items: center;
+  }
+  .benefit-description .benefit-title{
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .benefits-image {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .benefit-title {
+    font-size: 16px;
+  }
+
+  .benefit-description {
+    font-size: 14px;
+  }
+
+  .website-benefits {
+    padding: 30px 12px;
+  }
+}
+@media (max-width: 1228px){
+.hn-pricing-cards-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .hn-pricing-cards {
+    display: flex;
+    gap: 24px;
+  }
+
+  .hn-card {
+    flex: 0 0 30%;       /* fixed width */
+    max-width: 300px;      /* prevent growing too wide */
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+}
+@media (max-width: 1228px) {
+  .hn-card {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 900px) {
+  .hn-card {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hn-card {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
